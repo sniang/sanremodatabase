@@ -1,0 +1,12 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/sniang/sanremodatabase_api.git
+	branch = dev_1.2
+[submodule "web"]
+	path = web
+	url = https://github.com/sniang/sanremodatabase_web.git
+	branch = dev_1.2
+[submodule "app"]
+	path = app
+	url = https://github.com/sniang/sanremodatabase_app.git
+	branch = dev_1.2
