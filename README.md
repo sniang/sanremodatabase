@@ -39,11 +39,20 @@ Top-level folders:
 ## Quick Start
 Each part of the project runs independently. Choose one to get started:
 
+### API (Node.js)
+```bash
+cd api
+npm install
+node index.js
+```
+See `api/README.md` for endpoint details.
+Is currently running on the VPS using `pm2`.
+
 ### Web (Vite React)
 ```bash
 cd web
 npm install
-npm run dev
+npm run dev # Start in localhost for test
 ```
 Build for production:
 ```bash
@@ -55,17 +64,8 @@ npm run preview
 ```bash
 cd app
 npm install
-npm start
-# Open on a device using Expo Go or run on simulator
+npx expo start # Open on a device using Expo Go or run on simulator
 ```
-
-### API (Node.js)
-```bash
-cd api
-npm install
-node index.js
-```
-See `api/README.md` for endpoint details.
 
 ## Development Notes
 - The `web` app uses Vite and React. See `web/package.json` for scripts.
