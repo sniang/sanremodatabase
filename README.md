@@ -1,79 +1,124 @@
 
 # Sanremo Database
 
-A multi-interface project for exploring the history, songs, and artists of the Sanremo Music Festival. Includes a React web app, a React Native mobile app, and a Node.js API, all powered by a curated dataset of festival performances.
+A multi-interface project for exploring the history, songs, and artists of the Sanremo Music Festival. Includes a React web app, a Capacitor-based lite app, a React Native mobile app, and a Node.js API, all powered by a curated MySQL dataset of festival performances.
 
 ---
 
 ## Table of Contents
+
 - [About](#about)
 - [Features](#features)
 - [Repository Structure](#repository-structure)
 - [Quick Start](#quick-start)
 - [Development Notes](#development-notes)
 - [Contact](#contact)
+- [License](#license)
 
 ---
 
 ## About
-Sanremo Database is an open-source project dedicated to making the history of the Sanremo Music Festival accessible and searchable. It provides:
-- A modern web app for browsing songs, artists, and festival editions
-- A mobile app for on-the-go exploration
-- A simple API for programmatic access to the data
+
+Sanremo Database is a project dedicated to making the history of the Sanremo Music Festival accessible and searchable. It provides:
+
+- A modern **web app** for browsing songs, artists, and festival editions
+- A **lite mobile app** (Capacitor) for iOS and Android
+- A **React Native app** (Expo) for a richer mobile experience
+- A **REST API** for programmatic access to the data
 
 ## Features
+
 - Multilingual support (Italian, English, French)
 - Search by year, singer, or song title
 - Random song discovery
 - Detailed festival rankings and categories
 - Direct links to music platforms (YouTube, Spotify, Apple Music, Amazon Music, Deezer)
 - Embedded YouTube videos for instant playback
+- AI-generated news summaries about the festival
 
 ## Repository Structure
-Top-level folders:
-- `web/` – Vite/React web app and static site files
-- `app/` – React Native (Expo) mobile app
-- `api/` – Node.js microservice for data access
-- `admin/` – static admin pages
+
+This monorepo uses [Git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+
+| Folder | Description | Tech Stack |
+|---|---|---|
+| [`web/`](web/) | Main web application | Vite, React, MUI |
+| [`lite_app/`](lite_app/) | Lite mobile app (iOS & Android) | Vite, React, Capacitor |
+| [`app/`](app/) | React Native mobile app | Expo, React Native |
+| [`api/`](api/) | REST API | Node.js, Express, MySQL |
 
 ## Quick Start
-Each part of the project runs independently. Choose one to get started:
+
+Each part of the project runs independently. See the README in each subfolder for full details.
 
 ### API (Node.js)
+
 ```bash
 cd api
 npm install
 node index.js
 ```
-See `api/README.md` for endpoint details.
-Is currently running on the VPS using `pm2`.
 
-### Web (Vite React)
+Currently running on the VPS via `pm2`. See [`api/README.md`](api/README.md) for endpoints.
+
+### Web (Vite + React)
+
 ```bash
 cd web
 npm install
-npm run dev # Start in localhost for test
+npm run dev
 ```
+
 Build for production:
+
 ```bash
 npm run build
 npm run preview
 ```
 
+### Lite App (Capacitor)
+
+```bash
+cd lite_app
+npm install
+npm run dev
+```
+
+Build and sync for native platforms:
+
+```bash
+npm run build
+npx cap sync
+npx cap open ios    # or: npx cap open android
+```
+
 ### Mobile App (Expo)
+
 ```bash
 cd app
 npm install
-npx expo start # Open on a device using Expo Go or run on simulator
+npx expo start
 ```
 
 ## Development Notes
-- The `web` app uses Vite and React. See `web/package.json` for scripts.
-- The `app` directory is an Expo project (React Native).
-- The `api` folder contains a minimal Node.js server for development.
-- Static site folders for multiple languages: `en/`, `fr/`, `it/`.
+
+- The `web/` and `lite_app/` apps both use Vite + React + MUI. The lite app adds Capacitor for native builds.
+- The `app/` directory is an Expo project (React Native).
+- The `api/` folder runs an Express server backed by MySQL.
+- Each submodule has its own `package.json` and can be developed independently.
 
 ## Contact
-Maintainer: Samuel Niang ([Portfolio](https://samuelniang.eu))
-Email: [contact@sanremodatabase.eu](mailto:contact@sanremodatabase.eu)
+
+**Maintainer:** Samuel Niang — [Portfolio](https://samuelniang.eu)
+**Email:** [contact@sanremodatabase.eu](mailto:contact@sanremodatabase.eu)
+
+## Support
+
+If you enjoy this project, consider supporting the developer:
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T81A76CO)
+
+## License
+
+All rights reserved © 2025–2026 Samuel Niang
 
