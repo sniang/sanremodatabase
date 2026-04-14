@@ -10,3 +10,6 @@
 	path = app
 	url = https://github.com/sniang/sanremodatabase_app.git
 	branch = dev_1.2
+[submodule "lite_app"]
+	path = lite_app
+	url = https://github.com/sniang/sanremodatabase_liteapp.git
