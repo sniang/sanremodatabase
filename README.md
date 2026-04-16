@@ -35,6 +35,7 @@ Sanremo Database is a project dedicated to making the history of the Sanremo Mus
 - Direct links to music platforms (YouTube, Spotify, Apple Music, Amazon Music, Deezer)
 - Embedded YouTube videos for instant playback
 - AI-generated news summaries about the festival
+- Secure admin authentication (JWT) for data management
 
 ## Repository Structure
 
@@ -59,7 +60,7 @@ npm install
 node index.js
 ```
 
-Currently running on the VPS via `pm2`. See [`api/README.md`](api/README.md) for endpoints.
+> **Note:** You need to set `JWT_SECRET` in your `.env` file and create an admin account with `node scripts/create-admin.js`. See [`api/README.md`](api/README.md) for full setup.
 
 ### Web (Vite + React)
 
